@@ -1,0 +1,7 @@
+a.lnk-act::after {
+    content: " ➤";
+}
+
+a.lnk-act {
+    font-weight: bold;
+}
