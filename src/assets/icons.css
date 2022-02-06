@@ -1,0 +1,13 @@
+svg.cart-icon .selectize,
+svg.user-icon .selectize {
+    stroke: white;
+}
+
+a.active svg.cart-icon *.selectize,
+div:hover > svg.cart-icon .selectize,
+svg.cart-icon:hover .selectize,
+a.active svg.user-icon .selectize,
+div:hover > svg.user-icon .selectize,
+svg.user-icon:hover .selectize {
+    stroke: var(--primary-color);
+}

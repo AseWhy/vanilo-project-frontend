@@ -1,7 +1,104 @@
-a.lnk-act::after {
-    content: " ➤";
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
 }
 
-a.lnk-act {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --background-color-lighest: #181818;
+    --background-color: #131313;
+    --background-color-darked: #0F0F0F;
+    --primary-color: #FF6B00;
+}
+
+.preloader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.preloader > img {
+    width: 10vh;
+    height: 10vh;
+    z-index: 1000;
+    margin: auto;
+    display: block;
+    position: relative;
+    top: calc(50% - 10vh);
+    animation: spin 1s infinite;
+}
+
+html, body, #root {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color-darked);
+    font-family: Montserrat;
+    overflow-x: hidden;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a.active, a:hover {
+    color: var(--primary-color);
+}
+
+.main-container {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+}
+
+.splitterator {
+    display: flex;
+    width: 100%;
+    color: white;
+    margin: 1.25rem 0;
+}
+
+.splitterator > span {
+    width: 40%;
+    margin: auto;
+    text-align: center;
     font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.splitterator > span:first-child, .splitterator > span:last-child {
+    border-bottom: 3px solid white;
+    width: 100%;
+}
+
+.no_items_label {
+    text-align: center;
+}
+
+input {
+    color: white;
+}
+
+input:focus, button:focus {
+    outline:none;
+}
+
+hr {
+    border-top-color: var(--primary-color);
+    border-right-color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    background-color: var(--primary-color);
+    margin: 1.5rem 0;
+}
+
+ul {
+    list-style-type: decimal;
 }

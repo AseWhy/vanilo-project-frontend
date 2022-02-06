@@ -1,61 +1,28 @@
-import { MenuItem, MenuList, Paper, Stack } from "@mui/material";
-import { createContext, useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { observer } from "mobx-react-lite";
+import { useEffect } from "react";
+import { useRoot } from "../../config/hooks";
 import ServiceRouter from "../../router/ServiceRoute";
+import ErrorBoundary from "../ErrorBoundary";
+import Preloader from "../Preloader";
+import Router from "./Router";
 
-export const pageContext = createContext<any>({});
+export default observer(() => {
+    const root = useRoot();
 
-export const usePageContext = () => useContext(pageContext);
+    useEffect(() => {
+        if(ServiceRouter.loginPage.isCurrent) {
+            return;
+        }
 
-export default function Page({ children }: any) {
-    const [ id, setId ] = useState(null);
+        root.fetchCurrentUser(false);
+    }, [ root ]);
 
-    return <Stack direction="row" spacing={2}>
-        <Paper>
-            <MenuList>
-                <MenuItem>
-                    <NavLink activeClassName="lnk-act" to={ServiceRouter.peoplesPage.routeWithoutParams}> Люди </NavLink>
-                </MenuItem>
 
-                <MenuItem> 
-                    <NavLink activeClassName="lnk-act" to={ServiceRouter.studentsPage.routeWithoutParams}> Студенты </NavLink>
-                </MenuItem>
+    if(root.isLoading) {
+        return <Preloader/>
+    }
 
-                <MenuItem> 
-                    <NavLink activeClassName="lnk-act" to={ServiceRouter.groupsPage.routeWithoutParams}> Группы </NavLink>
-                </MenuItem>
-
-                <MenuItem>
-                    <NavLink activeClassName="lnk-act" to={ServiceRouter.specialityPage.routeWithoutParams}> Специальности </NavLink>
-                </MenuItem>
-
-                <MenuItem>
-                    <NavLink activeClassName="lnk-act" to={ServiceRouter.semestersPage.routeWithoutParams}> Семестры </NavLink>
-                </MenuItem>
-
-                <MenuItem>
-                    <NavLink activeClassName="lnk-act" to={ServiceRouter.teachersPage.routeWithoutParams}> Преподаватели </NavLink>
-                </MenuItem>
-
-                <MenuItem>
-                    <NavLink activeClassName="lnk-act" to={ServiceRouter.thingsPage.routeWithoutParams}> Предметы </NavLink>
-                </MenuItem>
-
-                <MenuItem>
-                    <NavLink activeClassName="lnk-act" to={ServiceRouter.statementsPage.routeWithoutParams}> Отчетности </NavLink>
-                </MenuItem>
-            </MenuList>
-        </Paper>
-
-        <pageContext.Provider value={
-            {
-                id,
-                setId
-            }
-        }>
-            <Paper style={{ width: "100%", height: "min(100%, 20rem)", padding: "0.5rem" }}>
-                { children }
-            </Paper>
-        </pageContext.Provider>
-    </Stack>
-}
+    return <ErrorBoundary>
+        <Router/>
+    </ErrorBoundary>;
+})

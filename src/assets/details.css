@@ -1,0 +1,120 @@
+.content_wrapper {
+    padding: 4rem;
+}
+
+.poster_header {
+    display: grid;
+    gap: 0.5rem;
+    position: relative;
+    margin-bottom: 3rem;
+    grid-template-columns: max-content max-content;
+}
+
+.poster_images {
+    display: flex;
+    height: 300pt;
+    gap: 0.5rem;
+}
+
+.poster_images > .poster-current-content {
+    height: 100%;
+}
+
+.poster_attachments {
+    height: 100%;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.poster_attachments > img {
+    height: calc(33.33% - 0.342rem);
+}
+
+.collection_info {
+    color: var(--primary-color);
+    padding: 0 1.5rem;
+    min-width: 300pt;
+    max-width: 400pt;
+    width: 100%;
+}
+
+.collection_info > h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.438rem;
+    line-height: 4.188rem;
+    margin: 0.25rem 0;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.collection_info > h3 {
+    font-size: 1.5rem;
+    line-height: 1.829rem;
+    font-weight: 600;
+}
+
+.collection_actions {
+    color: white;
+    display: flex;
+}
+
+.collection_meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.collection_meta p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin: 0.25rem 0;
+}
+
+.collection_buy {
+    display: grid;
+    margin-left: auto;
+}
+
+.collection_buy > * {
+    margin-left: auto;
+}
+
+.collection_add_in_cart {
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 0;
+    text-transform: uppercase;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    padding: 0 0.5rem;
+    cursor: pointer;
+}
+
+.collection_description_header {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.813rem;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: white;
+}
+
+.collection_description_body {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    display: flex;
+    color: white;
+    margin: 1.5rem 0 0 1.5rem;
+    white-space: pre-wrap;
+    width: 90%;
+}

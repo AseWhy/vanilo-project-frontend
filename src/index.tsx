@@ -4,6 +4,8 @@ import App from './App';
 import { APPLICATION_ELEMENT_ID } from "./config";
 import { Provider, RootStore } from "./store/RootStore";
 
+import "./assets/common.css";
+
 export const rootStore = RootStore.create();
 
 ReactDOM.render(

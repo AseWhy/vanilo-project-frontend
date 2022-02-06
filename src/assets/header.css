@@ -1,0 +1,42 @@
+.header-container {
+    display: flex;
+    padding: 1rem 1.5rem;
+    background-color: var(--background-color);
+}
+
+.header-button-container {
+    text-transform: uppercase;
+    padding: 0.5rem 5rem;
+    margin: auto;
+    gap: 2rem;
+    display: flex;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    gap: 0.25rem;
+    background: var(--background-color-darked);
+    border-radius: 2.5rem;
+    padding: 0 1rem;
+}
+
+.search .search-field {
+    margin: auto;
+    position: relative;
+    background: none;
+    border: none;
+    border-radius: 0.5rem;
+    font-style: oblique;
+    font-family: 'Montserrat';
+    color: white;
+}
+
+.search img {
+    cursor: pointer;
+    margin: auto;
+}
+
+.hright-icon {
+    padding: 0.5rem;
+}

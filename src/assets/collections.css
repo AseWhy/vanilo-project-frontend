@@ -1,0 +1,96 @@
+.collection_card_root {
+    width: 30vw;
+    height: 23vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.25s;
+    background-size: 100%;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.collection_card_root:hover {
+    background-size: 110%;
+}
+
+.collection_header {
+    padding: 0.25rem 1rem;
+}
+
+.collection_author_name {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.813rem;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.collection_meta {
+    display: flex;
+}
+
+.collection_name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.collection_card_formatter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.collection_card_formatter > a:hover {
+    color: white;
+}
+
+.collection_card_wrapper {
+    color: white;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.collection_track_count {
+    margin-left: auto;
+}
+
+.collection_about {
+    width: 100%;
+    text-align: center;
+    padding: 0.25rem;
+    background: var(--primary-color);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    font-variant: small-caps;
+    cursor: pointer;
+}
+
+.colections_root {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 100%;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    width: calc(100% - 3rem);
+}
+
+@media screen and (min-width: 1600px) {
+    .colections_root {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .collection_card_root {
+        width: 23vw;
+        height: 17.63vw;
+    }
+}

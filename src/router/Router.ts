@@ -1,5 +1,6 @@
-import { ExtractRouteParams } from "react-router";
+import { ExtractRouteParams, matchPath } from "react-router";
 import { generatePath } from "react-router-dom";
+import { commonHistory } from "../config";
 
 /**
  * Абстракция для реализации класса который может использоваться удобной для записи путей сейрвиса
@@ -34,6 +35,13 @@ export default abstract class Route {
      */
     public get routeWithoutParams(): string {
         return ((this._parent?.routeWithoutParams ?? '') + this.path)
+    }
+
+    /**
+     * Вернет true, если это текущий роут
+     */
+    public get isCurrent() {
+        return matchPath(commonHistory.location.pathname, this.routeWithoutParams) != null;
     }
 
     /**

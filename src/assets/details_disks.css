@@ -1,0 +1,28 @@
+.collection_songs {
+    color: white;
+}
+
+.collection_songs_header, .collection_songs_body {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.collection_songs_body {
+    display: grid;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.219rem;
+    margin: 1.5rem 0 0 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.collection_songs_header {
+    font-weight: 600;
+}
+
+.collection_disk_index, .collection_songs_header {
+    font-size: 1.5rem;
+    line-height: 1.829rem;
+}

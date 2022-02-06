@@ -1,0 +1,45 @@
+.wrap-system-center {
+    width: 50vh;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    top: 20vh;
+}
+
+.wrap-system-center > img {
+    width: 100%;
+    margin: auto;
+    display: block;
+}
+
+.auth-options-button {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.auth-options-button > a {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+    display: flex;
+    align-items: center;
+    text-decoration-line: underline;
+    color: white;
+    margin: auto;
+    cursor: pointer;
+}
+
+.auth-options-button > a.active, .auth-options-button > *:hover {
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.auth-options-button > :first-child, .auth-wrap-underlinks > :first-child {
+    margin-left: 0;
+}
+
+.auth-options-button > :last-child, .auth-wrap-underlinks > :last-child {
+    margin-right: 0;
+}

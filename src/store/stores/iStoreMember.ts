@@ -8,34 +8,21 @@ export default iRootStoreProvider
         elementsPerPage: types.optional(types.number, 500),
         totalElements: types.optional(types.number, 0),
         totalPages: types.optional(types.number, 0),
-        loading: types.optional(types.boolean, false),
         requested: types.array(types.number)
     })
     .views(self => ({
-        get loaded() {
-            return self.loading;
-        }
+
     }))
 .actions(self => ({
     pageProcess(response: any,) {
         self.totalElements = response.totalElements;
         self.totalPages = response.totalElements / self.elementsPerPage;
-        
-        this.setLoaded();
     },
     
     getUnreqestedData(entities: any[]): any[] {
         const unrequested = entities.filter((entiy: any) => !self.requested.includes(entiy.id));
         self.requested.push(...unrequested.map((e: any) => e.id));
         return unrequested;
-    },
-
-    setLoaded() {
-        self.loading = false;
-    },
-
-    setLoading() {
-        self.loading = true;
     },
 
     nextPage() {

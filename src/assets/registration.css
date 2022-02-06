@@ -1,0 +1,58 @@
+.registration-wrap-underlinks {
+    display: flex;
+}
+
+.registration-wrap-underlinks {
+    margin-top: 1rem;
+    padding: 0.75rem;
+}
+
+.registration-wrap-underlinks > button {
+    padding: 0.5rem 3rem;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: auto;
+}
+
+.wrap-inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+}
+
+.wrap-inputs input {
+    padding: 0.75rem;
+    background-color: var(--background-color);
+    border: none;
+    margin: 0.25rem 0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.wrap-input-variations {
+    display: flex;
+}
+
+.wrap-input-variations > button {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.input-wrapper-container {
+    transition: left 0.25s;
+    position: relative;
+    display: flex;
+    width: 200%;
+    left: 0;
+}
+
+.input-wrapper-container.stage-2 {
+    left: -100%;
+}
