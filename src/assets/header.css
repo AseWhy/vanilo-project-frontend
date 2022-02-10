@@ -4,12 +4,30 @@
     background-color: var(--background-color);
 }
 
+.header-container > a, .header-container > .search {
+    z-index: 1;
+}
+
 .header-button-container {
+    width: 100%;
+}
+
+.header-button-wrapper {
     text-transform: uppercase;
     padding: 0.5rem 5rem;
-    margin: auto;
     gap: 2rem;
     display: flex;
+    position: absolute;
+    width: calc(100% - 10rem);
+    left: 0;
+}
+
+.header-button-wrapper > a:last-child {
+    margin-right: auto;
+}
+
+.header-button-wrapper > a:first-child {
+    margin-left: auto;
 }
 
 .search {

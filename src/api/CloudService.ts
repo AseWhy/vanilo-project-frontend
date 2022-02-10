@@ -29,25 +29,24 @@ export default class CloudService {
             if(expires_pure > Date.now() / 1000) {
                 return "Bearer " + token;
             } else {
-                this.logout();
-
-                throw new ServiceException("Unauthorized", 403, 0);
+                return undefined;
             }
         } else {
-            this.logout();
-
-            throw new ServiceException("Unauthorized", 403, 0);
+            return undefined;
         }
     }
 
-    public logout() {
-        localStorage.removeItem("token");
-        localStorage.removeItem("token_expires");
-    }
-
     public getHeaders(): any {
-        return {
-            Authorization: this.getToken()
+        const token = this.getToken();
+        
+        if(token != null) {
+            return {
+                Authorization: token
+            }
+        } else {
+            return {
+
+            }
         }
     }
 

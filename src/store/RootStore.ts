@@ -54,11 +54,13 @@ export const RootStore = DefaultStore
         
         fetchCurrentUser: flow(function* (errorly: boolean) {
             self.loading();
-    
+
             if(self.user == null) {
                 try {
                     self.user = yield VaniloService.me();
                 } catch(e: any) {
+                    console.log(e);
+
                     if(e.code === 401) {
                         self.logout();
                     } else if(errorly) {
@@ -90,7 +92,7 @@ export const RootStore = DefaultStore
 
             self.updateAuth();
 
-            self.fetchCurrentUser(true);
+            yield self.fetchCurrentUser(true);
         } catch(e: any) {
             toast(e.message, { type: "error" });
         }
@@ -106,12 +108,12 @@ export const RootStore = DefaultStore
 
             self.updateAuth();
 
-            self.fetchCurrentUser(true);
+            yield self.fetchCurrentUser(true);
         } catch(e: any) {
-            if(e.code === 401) {
+            if(e?.code === 401) {
                 toast("Логин или пароль неправильный", { type: "error" });
             } else {
-                toast(e.message, { type: "error" });
+                toast(e?.message, { type: "error" });
             }
         }
 

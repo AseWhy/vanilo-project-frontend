@@ -18,6 +18,8 @@ export default function LoginPage() {
     async function submit(values: any) {
         await root.loginUser(values);
 
+        console.log(root.user);
+
         if(root.user != null) {
             hitory.push(ServiceRouter.mainPage.routeWithoutParams);
         }

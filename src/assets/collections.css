@@ -29,6 +29,7 @@
 
 .collection_meta {
     display: flex;
+    flex-direction: row;
 }
 
 .collection_name {

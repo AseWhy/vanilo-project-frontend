@@ -22,7 +22,7 @@ export default new class VaniloService extends CloudService {
     }
 
     public deleteCartItem(id: number) {
-        return this.baseErrorCheck(this.delete("/_items/" + id));
+        return this.baseErrorCheck(this.delete("/cart_items/" + id));
     }
 
     public editCartItem(id: number, payload: any) {

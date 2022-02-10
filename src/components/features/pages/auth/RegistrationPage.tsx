@@ -18,8 +18,10 @@ export default function RegistrationPage() {
     const [ stage, setStage ] = useState(1);
 
     async function submit(values: any) {
+        values = { ...values };
+
         if(values['password'] !== values['password_confirm']) {
-            toast("Password mismatch!", { type: "error" });
+            toast("Пароли несовпадают!", { type: "error" });
 
             setStage(1);
 
@@ -30,7 +32,13 @@ export default function RegistrationPage() {
 
         await root.registerUser(values);
 
-        hitory.push(ServiceRouter.mainPage.routeWithoutParams);
+        if(root.user != null) {
+            hitory.push(ServiceRouter.mainPage.routeWithoutParams);
+        } else {
+            setStage(1);
+
+            return;
+        }
     }
 
     return <Formik

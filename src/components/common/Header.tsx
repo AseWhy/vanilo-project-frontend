@@ -17,23 +17,25 @@ export default function Header() {
         />
 
         <div className="header-button-container">
-            <NavLink exact activeClassName="active" to={ServiceRouter.mainPage.routeWithoutParams}> Main </NavLink>
+            <div className="header-button-wrapper">
+                <NavLink exact activeClassName="active" to={ServiceRouter.mainPage.routeWithoutParams}> Main </NavLink>
 
-            <NavLink
-                exact
-                activeClassName="active"
-                to={ServiceRouter.collectionPage.routeWithoutParams}
-                isActive={
-                    () => [
-                        ServiceRouter.collectionPage.isCurrent,
-                        ServiceRouter.detailsPage.isCurrent
-                    ].includes(true)
-                }
-            >
-                Collection
-            </NavLink>
+                <NavLink
+                    exact
+                    activeClassName="active"
+                    to={ServiceRouter.collectionPage.routeWithoutParams}
+                    isActive={
+                        () => [
+                            ServiceRouter.collectionPage.isCurrent,
+                            ServiceRouter.detailsPage.isCurrent
+                        ].includes(true)
+                    }
+                >
+                    Collection
+                </NavLink>
 
-            <NavLink exact activeClassName="active" to={ServiceRouter.aboutPage.routeWithoutParams}> Contacts </NavLink>
+                <NavLink exact activeClassName="active" to={ServiceRouter.aboutPage.routeWithoutParams}> Contacts </NavLink>
+            </div>
         </div>
 
         <div className="search">
